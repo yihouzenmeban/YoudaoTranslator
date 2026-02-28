@@ -13,6 +13,8 @@
 
 macOS Monterey 请使用 V3 版本！
 
+Apple Silicon (`arm64`) 与 Intel (`x86_64`) 现在需要使用各自对应的 `txiki` runtime。仓库内的 `runtime/txiki` 会在 macOS 上自动选择正确架构的二进制，因此 Alfred 侧继续调用 `runtime/txiki` 即可。
+
 标记为施工中 (🚧) 特性 V3 尚未支持，如果需要使用，请切换到 V2 使用。
 
 ## 特性

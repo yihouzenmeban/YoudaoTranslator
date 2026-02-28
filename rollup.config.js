@@ -13,7 +13,7 @@ export default {
       tsconfig: "tsconfig.json"
     }),
     copy({targets: [
-      { src: 'runtime/*', dest: 'dist/runtime' },
+      { src: 'runtime/**/*', dest: 'dist/runtime' },
       { src: 'assets/*', dest: 'dist/assets' }
     ]}),
     uglify()

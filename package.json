@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "rimraf dist && rollup -c rollup.config.js",
-    "test": "./runtime/quick ./dist/index.js"
+    "test": "./runtime/txiki ./dist/index.js"
   },
   "author": "Wenson",
   "license": "MIT",
