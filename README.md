@@ -42,6 +42,36 @@ Apple Silicon (`arm64`) 与 Intel (`x86_64`) 现在需要使用各自对应的 `
 ### 2. 配置Workflow
 
 [👉 请参考 wiki 进行配置](https://github.com/wensonsmith/YoudaoTranslator/wiki)
+
+## 打包 Release
+
+仓库内置了 Alfred 安装包打包脚本，默认会先使用仓库内的 `workflow/` 模板和构建产物组装 `.alfredworkflow` 文件；如果你显式传入 `--source`，也可以直接从本机现有 workflow 目录打包。
+
+```bash
+cd /Users/yihouzenmeban/work/YoudaoTranslator
+./scripts/package-workflow.sh -v 3.1.1
+```
+
+也可以通过 npm script 执行：
+
+```bash
+pnpm run package:workflow -- -v 3.1.1
+```
+
+生成的文件默认位于 `release/YoudaoTranslator-<version>.alfredworkflow`。
+
+推送 `v*` tag 后，GitHub Actions 会自动构建并发布同名 Release，附带 `.alfredworkflow` 安装包。
+
+发布到 GitHub Release 的常见流程：
+
+```bash
+git add .
+git commit -m "Release v3.1.1"
+git push origin HEAD
+git tag v3.1.1
+git push origin v3.1.1
+gh release create v3.1.1 release/YoudaoTranslator-3.1.1.alfredworkflow --title "v3.1.1"
+```
 ## Contributors
 
 <a href="https://iwenson.com" target="_blank"><img src="https://avatars1.githubusercontent.com/u/2544185?s=120&v=4" height="60"/></a> 

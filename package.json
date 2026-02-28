@@ -2,9 +2,11 @@
   "name": "youdao.translator",
   "version": "3.0.0",
   "description": "Elegant translation tool",
+  "packageManager": "pnpm@6.35.1",
   "main": "index.js",
   "scripts": {
     "build": "rimraf dist && rollup -c rollup.config.js",
+    "package:workflow": "./scripts/package-workflow.sh",
     "test": "./runtime/txiki ./dist/index.js"
   },
   "author": "Wenson",
